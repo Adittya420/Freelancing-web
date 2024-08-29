@@ -1,0 +1,65 @@
+import React, { useState } from "react";
+import "../css/Login.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+
+function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+
+  const newRequest = axios.create({
+    baseURL: "http://localhost:4000/api/",
+    withCredentials: true,
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await newRequest.post("/auth/login", { username, password });
+      localStorage.setItem("currentUser", JSON.stringify(res.data));
+      navigate("/")
+    } catch (err) {
+      setError(err.response.data);
+    }
+  };
+
+  const handleSignUpClick = () => {
+    navigate("/register"); // Assuming "/register" is the route to the Register component
+  };
+  return (
+   /* From Uiverse.io by SteeveeG */ 
+<div class="container">
+  <form class="SignInForms" style={{height:'300px'}}>
+    <div class="font header">Sign in with existing account</div>
+     <input
+     className="Input"
+          name="username"
+          type="text"
+          placeholder="username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+    <input
+    className="Input"
+          name="password"
+           placeholder="password"
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+    <div class="Buttons">
+      <button class="SignInUp">Sign in</button>
+      <button class="ForgotPassword">Forgot password?</button>
+    </div>
+    
+    <div class="font header" style={{marginTop:'20px'}}>Not registerd yet?</div>
+    <button class="SignInUp" onClick={handleSignUpClick}>Sign Up</button>
+  </form>
+</div>
+
+  );
+}
+
+export default Login;
