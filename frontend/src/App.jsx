@@ -1,10 +1,16 @@
 import './App.css'
+import Card from './components/Card';
+import NavBar from "./components/Navbar";
+import Home from './pages/Home';
+import MiddleHome from './pages/MiddleHome';
 
 function App() {  
 
   return (
     <>
-     <h1>Hello World</h1>
+     <NavBar />
+     <Home />    
+     <MiddleHome /> 
     </>
   )
 }

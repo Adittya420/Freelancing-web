@@ -1,0 +1,8 @@
+.carousel{
+    width: 100vw;    
+}
+
+.sc-slide{
+    width: 33vw;    
+    margin-right: 30px !important;
+}
