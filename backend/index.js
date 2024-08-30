@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
 import testRoute from "./routes/test.route.js"
+import authRoute from "./routes/auth.route.js";
 
 const app = express();
 dotenv.config();
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
 })
+app.use("/api/auth", authRoute);
 
 app.use("/api", testRoute);
 
