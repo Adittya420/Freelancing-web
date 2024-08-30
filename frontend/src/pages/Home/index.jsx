@@ -1,5 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
+import MiddleHome from "../MiddleHome";
+import { useNavigate } from "react-router-dom";
 
 
 const GeometryElem = () => {
@@ -49,8 +51,9 @@ const GeometryElem = () => {
 
 
 const Home = () => {
-
+    const navigate = useNavigate();
     return (
+        <>
         <div style={{
             // backgroundColor: "#F1DEC6",
             backgroundColor: "#EBD3F8",
@@ -73,7 +76,7 @@ const Home = () => {
                   color:"white",
                   marginTop:"10px",        
                   fontSize:"1.2rem"          
-                }}
+                }} onClick={() => {navigate("/register")}}
                 >Get Started</Button>
             </Box>
             <Box sx={{
@@ -123,6 +126,8 @@ const Home = () => {
                 }}></div>
             </Box>
         </div>
+        <MiddleHome />
+        </>
     )
 }
 

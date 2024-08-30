@@ -18,19 +18,21 @@ function Register() {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(user);
     try {
       await newRequest.post("/auth/register", {
-        ...user      });
-      navigate("/")
+        ...user      }, {headers:{'Content-Type':'application/json'}});
+      navigate("/login")
     } catch (err) {
       console.log(err);
     }
   };
   const handleChange = (e) => {
-    setUser((prev) => {
-      return { ...prev, [e.target.name]: e.target.value };
-    });
+    const {name, value} = e.target;
+    setUser((prev) => ({
+      ...prev,
+      [name]: value
+    }));
   };
   const handleSignUpClick = () => {
     navigate("/login"); // Assuming "/register" is the route to the Register component
@@ -40,12 +42,12 @@ function Register() {
 <div className="container">
   <form className="SignInForms">
     <div className="font header">Join Us...</div>
-    <input type="text" className="Input" placeholder="Name" onChange={handleChange}/>
-    <input type="email" className="Input" placeholder="Email address" onChange={handleChange}/>
-    <input type="password" className="Input" placeholder="Password" onChange={handleChange}/>
-    <input type="password" className="Input" placeholder="Confirm password" onChange={handleChange} />
+    <input type="text" name="username" className="Input" placeholder="Name" onChange={handleChange}/>
+    <input type="email" name="email" className="Input" placeholder="Email address" onChange={handleChange}/>
+    <input type="password" name="password" className="Input" placeholder="Password" onChange={handleChange}/>
+    {/* <input type="password" className="Input" placeholder="Confirm password" onChange={handleChange} /> */}
     <div className="Buttons">
-      <button className="SignInUp" style={{width:'150px '}}>Create a account</button>
+      <button className="SignInUp" style={{width:'150px '}} onClick={handleSubmit}>Create a account</button>
     </div>
     <div className="font header" style={{marginTop:'20px'}}>Already have an account?</div>
     <button className="SignInUp" onClick={handleSignUpClick}>Sign in</button>

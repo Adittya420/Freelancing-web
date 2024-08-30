@@ -1,4 +1,7 @@
 /* From Uiverse.io by SteeveeG */ 
+body{
+  margin: 0;
+}
 .font {
     font-family:
       JetBrains Sans,
@@ -25,6 +28,7 @@
     background-color: rgb(245, 245, 245);
     width: 22.375em;
     height: 7px;
+    border-radius: 10px;
   }
   .header {
     color: rgb(75, 75, 75);
@@ -168,7 +172,9 @@
   }
   .container {
     display: flex;
-  
-    flex-direction: column;
+    height: 100vh;    
+    background-image: url('https://t4.ftcdn.net/jpg/01/65/56/31/360_F_165563150_xf0IOGuQtpY7Xzd0dfFpbVkqJCnr74Tv.jpg');
+    background-size: cover;
+    flex-direction: column;    
   }
   

@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../css/Login.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import AuthContext from "../Context/AuthContext";
 
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-
+  const {user, setUser} = useContext(AuthContext);
   const navigate = useNavigate();
 
   const newRequest = axios.create({
@@ -21,7 +22,8 @@ function Login() {
     try {
       const res = await newRequest.post("/auth/login", { username, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      navigate("/")
+      setUser(res.data);
+      navigate("/");
     } catch (err) {
       setError(err.response.data);
     }
@@ -50,7 +52,7 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
     <div className="Buttons">
-      <button className="SignInUp">Sign in</button>
+      <button className="SignInUp" onClick={handleSubmit}>Sign in</button>
       <button className="ForgotPassword">Forgot password?</button>
     </div>
     
