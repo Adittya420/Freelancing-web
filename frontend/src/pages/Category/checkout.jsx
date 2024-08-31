@@ -10,7 +10,7 @@ const Checkout = () => {
     useEffect(() => {
         const fetchGig = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/gigs/checkout/${id}`);
+                const response = await axios.get(`http://localhost:4000/api/gigs/checkout/${id}`, {withCredentials: true});
                 // console.log(response.data)
                 setGig(response.data);
             } catch (error) {

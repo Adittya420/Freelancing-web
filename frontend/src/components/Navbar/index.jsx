@@ -15,11 +15,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext";
 import axios from "axios";
+import { Link as RouterLink } from "react-router-dom";
 
 const pages = [
   { name: "Talent Matketplace", id: "talent" },
   { name: "Become a Freelancer", id: "freelance" },
-  { name: "Find Work", id: "work" },
+  { name: "Find Work", id: "gigs" },
   { name: "Post Gigs", id: "contact" },
   { name: "About", id: "about" },
 ];
@@ -122,12 +123,14 @@ const NavList = ({ ...props }) => {
       {pages.map(page => (
         <Link
           key={page.id}
+          component={RouterLink}
           sx={{
             color: { xs: "primary", sm: "white" },
             textDecoration: "none",
           }}          
+          to={page.id}
         >
-          <a href={page.id} style={{textDecoration:"none"}}>{page.name}</a>
+          {page.name}
         </Link>
       ))}
     </Stack>
@@ -144,7 +147,7 @@ const Header = () => {
             alignItems="center"
             width="100%"            
           >
-            <Typography variant="h5" fontFamily="Nunito, sans-serif">QuickGig</Typography>
+            <Typography variant="h5" fontFamily="Nunito, sans-serif"><a href="/">QuickGig</a></Typography>
             <Nav />
           </Stack>
         </Toolbar>

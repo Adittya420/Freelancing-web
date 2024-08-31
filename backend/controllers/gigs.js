@@ -1,10 +1,10 @@
-const express = require('express');
-const Gigs = require('../models/gigs_model');
+import express from 'express';
+import Gig from '../models/gigs.model.js';
 const router = express.Router();
 
 router.get('/checkout/:id', async (req, res) => {
     try {
-      const gig = await Gigs.findById(req.params.id);
+      const gig = await Gig.findById(req.params.id);
       if (!gig) {
         return res.status(404).json({ message: 'Gig not found' });
       }
@@ -14,5 +14,5 @@ router.get('/checkout/:id', async (req, res) => {
     }
   });
 
-module.exports = router;
+export default router;
 

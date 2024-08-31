@@ -18,7 +18,7 @@ const Card = (props) => {
          height="28vh" border="2px #AD49E1 solid" padding="0.5rem 1rem"
          borderRadius="2rem" fontFamily="Nunito, sans-serif" 
         >
-            <img src={map.get(props.name)} height="50px" style={{margin:"10px 1rem 1rem"}}/>
+            <img src={map.get(props.name)} width="64px" style={{margin:"10px 1rem 1rem"}}/>
             <Typography variant="h5" display="block" marginBottom="12px" fontFamily="Nunito, sans-serif" fontWeight="700">{props.title}</Typography>
             <Typography variant="body1" fontFamily="Nunito, sans-serif">{props.desc}</Typography>
         </Box>

@@ -21,7 +21,7 @@ const GigList = () => {
 
   const fetchGigs = async (page) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/categorylist/gigs/${encodedCategory}?page=${page}&limit=${limit}`);
+      const response = await axios.get(`http://localhost:4000/api/categorylist/gigs/${encodedCategory}?page=${page}&limit=${limit}`, {withCredentials:true});
       const data = response.data;
 
       setGigs(data.data);

@@ -7,7 +7,7 @@ const CategoryList = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/categorylist/category')
+        axios.get('http://localhost:4000/api/categorylist/category', {withCredentials: true})
             .then(response => setCategories(response.data))
             .catch(error => console.error(error));
     }, []);

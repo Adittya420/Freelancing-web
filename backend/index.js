@@ -6,6 +6,9 @@ import bodyParser from "body-parser";
 import testRoute from "./routes/test.route.js"
 import authRoute from "./routes/auth.route.js";
 import freelanceRouter from './routes/freelance.route.js';
+import gigListController from './controllers/gigs_list.js';
+import categoryController from './controllers/category_list.js';
+import gigController from './controllers/gigs.js';
 
 const app = express();
 dotenv.config();
@@ -25,9 +28,9 @@ app.use("/api/freelance", freelanceRouter);
 
 app.use("/api", testRoute);
 
-app.use('/api/gigslist', require('./controllers/gigs_list.js'))
-app.use('/api/categorylist', require('./controllers/category_list.js'))
-app.use('/api/gigs', require('./controllers/gigs.js'))
+app.use('/api/gigslist', gigListController);
+app.use('/api/categorylist', categoryController);
+app.use('/api/gigs', gigController);
 
 try {
     mongoose.connect(process.env.MONGODB_URL)

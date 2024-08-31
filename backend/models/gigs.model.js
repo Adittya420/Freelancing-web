@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const GigsSchema = new Schema({
@@ -52,5 +52,5 @@ const GigsSchema = new Schema({
     },
 
   });
-  const Gigs = mongoose.model('gigs', GigsSchema);
-  module.exports = Gigs;
+  export default mongoose.model('Gig', GigsSchema);
+  

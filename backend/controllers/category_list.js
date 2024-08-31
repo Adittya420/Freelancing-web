@@ -1,6 +1,6 @@
-const express = require('express');
-const Category = require('../models/category_model');
-const Gigs = require('../models/gigs_model');
+import express from 'express';
+import Category from '../models/category.model.js'
+import Gig from '../models/gigs.model.js';
 const router = express.Router();
 
 const escapeRegExp = (string) => {
@@ -33,8 +33,8 @@ router.get('/gigs/:category', async (req, res) => {
         const limit = parseInt(req.query.limit) || 10;
         const skip = (page - 1) * limit;
 
-        const gigs = await Gigs.find(filter).skip(skip).limit(limit);
-        const total = await Gigs.countDocuments(filter);
+        const gigs = await Gig.find(filter).skip(skip).limit(limit);
+        const total = await Gig.countDocuments(filter);
 
         res.json({
             data: gigs,
@@ -48,5 +48,5 @@ router.get('/gigs/:category', async (req, res) => {
 });
 
 
-module.exports = router;
+export default router;
 

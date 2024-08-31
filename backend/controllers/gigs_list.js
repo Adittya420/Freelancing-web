@@ -1,16 +1,17 @@
-const express = require('express');
-const Gigs = require('../models/gigs_model');
+import express from 'express';
+import Gig from '../models/gigs.model.js';
+
 const router = express.Router();
 
-router.get('/gigs', async (req, res) => {
+router.get('/gigs', async (req, res) => {    
     try {
         const filter = req.query.filter || {};
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 10;
         const skip = (page - 1) * limit;
 
-        const gigs = await Gigs.find(filter).skip(skip).limit(limit);
-        const total = await Gigs.countDocuments(filter);
+        const gigs = await Gig.find(filter).skip(skip).limit(limit);
+        const total = await Gig.countDocuments(filter);
 
         res.json({
             data: gigs,
@@ -25,5 +26,5 @@ router.get('/gigs', async (req, res) => {
 
 
 
-module.exports = router;
+export default router;
 
