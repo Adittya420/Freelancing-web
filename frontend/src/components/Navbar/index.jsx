@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext";
 import axios from "axios";
 import { Link as RouterLink } from "react-router-dom";
+import Avatar from "../Avatar/index";
 
 const pages = [
   { name: "Talent Matketplace", id: "talent" },
@@ -97,8 +98,13 @@ const Nav = () => {
           display: { xs: "none", sm: "inherit" },
         }}
       />
+      <div style={{ 
+        display:"inline-flex",
+        gap:"16px",
+        alignItems:"center"
+        }}>
        {user ? (
-        <Button color="white" style={{ backgroundColor: "#BF2EF0" }} onClick={handleLogout}>
+        <Button color="white" style={{ backgroundColor: "#BF2EF0", height:"80%"}} onClick={handleLogout}>
           {status}
         </Button>
       ) : (
@@ -106,6 +112,8 @@ const Nav = () => {
           {status}
         </Button>
       )}
+      {user && <Avatar />}
+      </div>
     </>
   );
 };

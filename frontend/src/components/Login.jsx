@@ -34,8 +34,9 @@ function Login() {
   };
   return (
    /* From Uiverse.io by SteeveeG */ 
-<div className="container">
-  <form className="SignInForms" style={{height:'300px'}}>
+<div className="flex flex-col h-screen w-screen bg-cover bg-center" 
+  style={{ backgroundImage: `url('https://t4.ftcdn.net/jpg/01/65/56/31/360_F_165563150_xf0IOGuQtpY7Xzd0dfFpbVkqJCnr74Tv.jpg')` }}>
+  <form className="SignInForms" style={{height:'330px'}}>
     <div className="font header">Sign in with existing account</div>
      <input
      className="Input"

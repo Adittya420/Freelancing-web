@@ -170,11 +170,12 @@ body{
   .NoAccForms {
     padding: 0;
   }
-  .container {
+  /* .container {
     display: flex;
-    height: 100vh;    
-    background-image: url('https://t4.ftcdn.net/jpg/01/65/56/31/360_F_165563150_xf0IOGuQtpY7Xzd0dfFpbVkqJCnr74Tv.jpg');
-    background-size: cover;
+    height: 100vh !important;    
+    width: 100vw !important; 
+    background-image: url('https://t4.ftcdn.net/jpg/01/65/56/31/360_F_165563150_xf0IOGuQtpY7Xzd0dfFpbVkqJCnr74Tv.jpg') !important;
+    background-size: cover !important;
     flex-direction: column;    
-  }
+  } */
   

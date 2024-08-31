@@ -9,8 +9,10 @@ import Freelance from './pages/Freelance';
 import CategoryList from './pages/Category/category';
 import GigList from './pages/Category/gigs';
 import Checkout from './pages/Category/checkout';
+import Ad from './pages/Ad';
 import './App.css'
 import AuthContext from './Context/AuthContext';
+
 function App() {
   const {user, setUser} = useContext(AuthContext);  
   const local = localStorage.getItem("currentUser");
@@ -21,7 +23,7 @@ function App() {
   },[user])
 
   return (
-    <>
+    <div style={{width:"100vw"}}>
       <Router>
         <NavBar />
         <Routes>
@@ -29,12 +31,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/freelance" element={user || local ? <Freelance /> : <Navigate to="/login"/>} />
+          <Route path='/ads' element={<Ad />} />
           <Route path="/gigs" element={<CategoryList />} />
           <Route path="/gigs/:category" element={<GigList />} />
           <Route path="/checkout/:id" element={<Checkout />} />
         </Routes>
       </Router>      
-    </>
+    </div>
   );
 }
 

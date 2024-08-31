@@ -39,7 +39,8 @@ function Register() {
   };
   return (
    /* From Uiverse.io by SteeveeG */ 
-<div className="container">
+<div className="flex flex-col h-screen w-screen bg-cover bg-center" 
+  style={{ backgroundImage: `url('https://t4.ftcdn.net/jpg/01/65/56/31/360_F_165563150_xf0IOGuQtpY7Xzd0dfFpbVkqJCnr74Tv.jpg')` }}>
   <form className="SignInForms">
     <div className="font header">Join Us...</div>
     <input type="text" name="username" className="Input" placeholder="Name" onChange={handleChange}/>
