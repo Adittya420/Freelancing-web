@@ -45,7 +45,7 @@ const GigList = () => {
 
   return (
     <>
-      <div className="p-4 max-w-fit mx-auto">
+      <div className="p-4 max-w-fit mt-16 ml-16 mr-16">
         <h1 className="text-2xl font-bold mb-4 text-center">{category}</h1>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {gigs.map(gig => (

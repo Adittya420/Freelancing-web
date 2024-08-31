@@ -24,7 +24,7 @@ const Checkout = () => {
     if (!gig) return <p>Loading...</p>;
 
     return (
-        <div className="p-4 sm:p-6 lg:p-4 mx-auto flex flex-col lg:flex-row lg:justify-around justify-around gap-4">
+        <div className="p-4 sm:p-6 lg:p-4 mt-16 ml-16 mr-16 flex flex-col lg:flex-row lg:justify-around justify-around gap-4">
 
             {/* Left Column */}
             <div className="flex-1 m-10">
