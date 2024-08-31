@@ -23,6 +23,10 @@ app.use("/api/auth", authRoute);
 
 app.use("/api", testRoute);
 
+app.use('/api/gigslist', require('./controllers/gigs_list.js'))
+app.use('/api/categorylist', require('./controllers/category_list.js'))
+app.use('/api/gigs', require('./controllers/gigs.js'))
+
 try {
     mongoose.connect(process.env.MONGODB_URL)
     .then(() => console.log("MongoDB connected successfully"))
