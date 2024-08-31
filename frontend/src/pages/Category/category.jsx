@@ -14,7 +14,7 @@ const CategoryList = () => {
 
     return (
         <>
-            <div className="h-fit flex flex-col lg:flex-row justify-center lg:justify-evenly p-10 sm:px-6 lg:px-8 bg-gradient-to-b from-indigo-800 to-blue-300 m-10 rounded-3xl gap-8 lg:gap-16 items-center">
+            <div className="h-fit flex flex-col lg:flex-row justify-center lg:justify-evenly p-10 sm:px-6 lg:px-8 bg-gradient-to-b from-indigo-800 to-blue-300 mt-20 mb-8 ml-16 mr-16 rounded-3xl gap-8 lg:gap-16 items-center">
                 <div className="font-light text-black-500 sm:text-lg dark:text-black-400 max-w-lg">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-black dark:text-white">Freelance with purpose: where your goals meet our expertise</h2>
                     <p className="mb-4 text-black font-serif">
@@ -29,6 +29,7 @@ const CategoryList = () => {
                 />
             </div>
 
+            <h1 className='text-4xl tracking-tight font-extrabold text-black text-center'>Categories</h1>
             <div
                 id="scroll-container"
                 className="flex overflow-x-scroll hide-scroll-bar"

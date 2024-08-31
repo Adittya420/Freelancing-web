@@ -24,7 +24,7 @@ const Checkout = () => {
     if (!gig) return <p>Loading...</p>;
 
     return (
-        <div className="p-4 sm:p-6 lg:p-4 mx-auto flex flex-col lg:flex-row lg:justify-around justify-around gap-4">
+        <div className="p-4 sm:p-6 lg:p-4 mt-16 ml-16 mr-16 flex flex-col lg:flex-row lg:justify-around justify-around gap-4">
 
             {/* Left Column */}
             <div className="flex-1 m-10">
@@ -75,13 +75,13 @@ const Checkout = () => {
                     {/* Hourly Rate */}
                     <div className="flex items-center">
                         <img src="https://img.icons8.com/emoji/48/000000/money-mouth-face.png" alt="Hourly Rate" className="w-6 h-6 mr-2" />
-                        <p className="text-sm sm:text-base">Hourly Rate: {gig.hourlyRate}</p>
+                        <p className="text-sm sm:text-base">Hourly Rate: ${gig.hourlyRate}</p>
                     </div>
 
                     {/* Job Success */}
                     <div className="flex items-center">
                         <img src="https://img.icons8.com/?size=100&id=31820&format=png&color=000000" alt="Job Success" className="w-6 h-6 mr-2" />
-                        <p className="text-sm sm:text-base">Job Success: {gig.jobSuccess}</p>
+                        <p className="text-sm sm:text-base">Job Success: {gig.jobSuccess}%</p>
                     </div>
                 </div>
 
