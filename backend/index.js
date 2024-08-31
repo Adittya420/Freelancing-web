@@ -5,6 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import testRoute from "./routes/test.route.js"
 import authRoute from "./routes/auth.route.js";
+import freelanceRouter from './routes/freelance.route.js';
 
 const app = express();
 dotenv.config();
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
     next();
 })
 app.use("/api/auth", authRoute);
+app.use("/api/freelance", freelanceRouter);
 
 app.use("/api", testRoute);
 

@@ -18,7 +18,7 @@ import axios from "axios";
 
 const pages = [
   { name: "Talent Matketplace", id: "talent" },
-  { name: "Become a Freelancer", id: "freelanceer" },
+  { name: "Become a Freelancer", id: "freelance" },
   { name: "Find Work", id: "work" },
   { name: "Post Gigs", id: "contact" },
   { name: "About", id: "about" },
@@ -125,9 +125,9 @@ const NavList = ({ ...props }) => {
           sx={{
             color: { xs: "primary", sm: "white" },
             textDecoration: "none",
-          }}
+          }}          
         >
-          {page.name}
+          <a href={page.id} style={{textDecoration:"none"}}>{page.name}</a>
         </Link>
       ))}
     </Stack>
