@@ -75,13 +75,13 @@ const Checkout = () => {
                     {/* Hourly Rate */}
                     <div className="flex items-center">
                         <img src="https://img.icons8.com/emoji/48/000000/money-mouth-face.png" alt="Hourly Rate" className="w-6 h-6 mr-2" />
-                        <p className="text-sm sm:text-base">Hourly Rate: {gig.hourlyRate}</p>
+                        <p className="text-sm sm:text-base">Hourly Rate: ${gig.hourlyRate}</p>
                     </div>
 
                     {/* Job Success */}
                     <div className="flex items-center">
                         <img src="https://img.icons8.com/?size=100&id=31820&format=png&color=000000" alt="Job Success" className="w-6 h-6 mr-2" />
-                        <p className="text-sm sm:text-base">Job Success: {gig.jobSuccess}</p>
+                        <p className="text-sm sm:text-base">Job Success: {gig.jobSuccess}%</p>
                     </div>
                 </div>
 

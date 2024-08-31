@@ -78,7 +78,7 @@ const GigList = () => {
                   )}
                   {gig.jobSuccess && (
                     <div className="w-1/2 px-2 mb-2">
-                      <p className="text-sm"><strong>Job Success:</strong> {gig.jobSuccess}</p>
+                      <p className="text-sm"><strong>Job Success:</strong> {gig.jobSuccess}%</p>
                     </div>
                   )}
                 </div>
