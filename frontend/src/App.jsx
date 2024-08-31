@@ -5,7 +5,7 @@ import Register from './components/Register';
 import Card from './components/Card';
 import NavBar from "./components/Navbar";
 import Home from './pages/Home';
-import MiddleHome from './pages/MiddleHome';
+import Freelance from './pages/Freelance';
 import './App.css'
 import AuthContext from './Context/AuthContext';
 function App() {
@@ -22,9 +22,10 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route exact path='/' element={user || local ? <Home /> : <Navigate to="/login"/>} />
+          <Route exact path='/' element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/freelance" element={user || local ? <Freelance /> : <Navigate to="/login"/>} />
         </Routes>
       </Router>      
     </>
