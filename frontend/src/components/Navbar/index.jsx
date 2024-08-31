@@ -18,11 +18,11 @@ import axios from "axios";
 import { Link as RouterLink } from "react-router-dom";
 
 const pages = [
-  { name: "Talent Matketplace", id: "talent" },
+  { name: "Search portal", id: "http://localhost:8502" },
   { name: "Become a Freelancer", id: "freelance" },
   { name: "Find Work", id: "gigs" },
   { name: "Post Gigs", id: "contact" },
-  { name: "About", id: "about" },
+  { name: "Al Recommendation", id: "http://localhost:8501" },
 ];
 
 const Nav = () => {
